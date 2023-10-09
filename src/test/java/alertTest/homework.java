@@ -26,11 +26,7 @@ public class homework {
                 throw new SecurityException("Usernme or Password is not valid");
             }
             System.out.println("Login Success!");
-        } catch (NullPointerException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalArgumentException e) {
-            throw new RuntimeException(e);
-        } catch (SecurityException e) {
+        } catch (NullPointerException | IllegalArgumentException | SecurityException e) {
             throw new RuntimeException(e);
         }
     }
