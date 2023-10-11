@@ -17,17 +17,21 @@ public class homework {
             System.out.println("enter password: ");
             String password = data.nextLine();
             if (password == null || password.isEmpty()) {
-                throw new NullPointerException("Password cant be empty");
+                throw new NullPointerException();
             }
             if (password.length() < 6){
-                throw new IllegalArgumentException("Password is less then 6");
+                throw new IllegalArgumentException();
             }
             if (!DataUsername.equals(userName) || !DataPassword.equals(password)){
-                throw new SecurityException("Usernme or Password is not valid");
+                throw new SecurityException();
             }
             System.out.println("Login Success!");
-        } catch (NullPointerException | IllegalArgumentException | SecurityException e) {
-            throw new RuntimeException(e);
+        } catch (NullPointerException e) {
+            System.out.println("Username and/or Password field is empty");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Password is less then 6");
+        } catch (SecurityException e) {
+            System.out.println("Usernme or Password is not valid");
         }
     }
     }
